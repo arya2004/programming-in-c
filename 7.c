@@ -90,15 +90,6 @@ void two(){
 
 int main(){
 
-    //printf("%i ", myAtoi("-932"));
-
-   // printf("%i\n", &s);  // &s equals &t[6]
-   // printf("%i\n", &t);
-  //  printf("%i\n", &t[6]);
-   //int x,a[x];
-
-            //printf("%i%i%i%i%i",x++,x,++x,++x,x++);    //fun(s, t);
-
   return 0;
 }
 
