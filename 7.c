@@ -96,11 +96,7 @@ int main(){
    // printf("%i\n", &t);
   //  printf("%i\n", &t[6]);
    //int x,a[x];
-    for (int i = 0,j = 0, k = 0; i < 4,j < 5,k>-1; i++,j++,k++)
-    {
-        printf("%i %i %i\n",i,j,k);
-    }
-    
+
             //printf("%i%i%i%i%i",x++,x,++x,++x,x++);    //fun(s, t);
 
   return 0;
