@@ -88,8 +88,26 @@ void two(){
 //hw:insert at last, first, end
 }
 
-int main(){
+void last(){
+    int a[10] = {2,4,6,8,10,12,14,16,18};
+    int size = 10;
+    int pos = 7;
+    int digit = 32;
+    for (int i = size; i > pos; i = i - 1)
+    {
+        a[i] = a[i-1];
+    }
+    a[pos] = 32;
+    for (int ii = 0; ii < size; ii++)
+    {
+        printf("%i\n",a[ii]);
+    }
+    
+    
+}
 
+int main(){
+last();
   return 0;
 }
 
