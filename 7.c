@@ -106,9 +106,18 @@ void last(){
     
 }
 
+void swapp(int *a, int *b){     //int a = 12;int b = 13;
+                //printf("%i %i", a, b);
+    *a = *b + *a;                    //swapp(&a, &b);
+                   //printf("%i %i", a, b);
+}
+
 
 int main(){
-twod();
+int a = 12;int b = 13;
+printf("%i %i\n", a, b);
+swapp(&a, &b);
+printf("%i", a);
   return 0;
 }
 
