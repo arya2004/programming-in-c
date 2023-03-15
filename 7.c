@@ -106,8 +106,9 @@ void last(){
     
 }
 
+
 int main(){
-last();
+twod();
   return 0;
 }
 
