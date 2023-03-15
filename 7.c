@@ -111,13 +111,22 @@ void swapp(int *a, int *b){     //int a = 12;int b = 13;
     *a = *b + *a;                    //swapp(&a, &b);
                    //printf("%i %i", a, b);
 }
+//swpa pointer, recurs power, del in array, struct emp:assign 
+void a1(){
+    struct employee
+    {   int 
+        
+    };
+    
+
+}
 
 
 int main(){
-int a = 12;int b = 13;
-printf("%i %i\n", a, b);
-swapp(&a, &b);
-printf("%i", a);
+
+int *p;
+float o = 34.2;
+p = &o;
   return 0;
 }
 

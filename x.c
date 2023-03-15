@@ -20,7 +20,6 @@ unsigned int Summation_using_recursion(unsigned int b){
     else{
         return b + Summation_using_recursion(b - 1);
     }
-
 }
 
 double power(double a, unsigned int n ) {
@@ -316,7 +315,9 @@ int  main() {
     int highest = 9;
     int middle = (highest - lowest) % 2;
     int number = 44;
-    printf("%i",binary_s_rec(a,middle, number, lowest, highest));
+    //printf("%i",binary_s_rec(a,middle, number, lowest, highest));
+    printf("%i",Summation_using_recursion(10));
+ 
    return 0;
 }
 
