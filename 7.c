@@ -120,13 +120,22 @@ void a1(){
     
 
 }
+int magic(){
+
+if (5 - printf("hello"))
+{
+    printf("hello");
+}
+else{
+    printf("World");
+}
+  return 0;
+}
 
 
 int main(){
 
-int *p;
-float o = 34.2;
-p = &o;
+
   return 0;
 }
 
