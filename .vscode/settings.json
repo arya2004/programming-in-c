@@ -1,10 +1,14 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
+        "*.ejs": "html",
         "dos.h": "c",
         "cmath": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "xlocale": "c",
+        "ios": "c",
+        "xiosbase": "c"
     }
 }

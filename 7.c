@@ -133,9 +133,36 @@ else{
 }
 
 
+int aaa(){
+
+  int s;
+  scanf("%i", &s);
+  int a[s];
+  float sum = 0;
+  for(int i = 0;i < s; i = i + 1){
+    //scanf("%f",  )
+  }
+}
 int main(){
-
-
+  int limit;printf("s");
+  scanf("%i", &limit);
+  int a[limit];
+  for(int i = 0;i< limit; i = i + i){
+    printf("s");
+    scanf("%i", &a[i]);
+  }
+  int sum;
+  scanf("%i", &sum);
+  for(int j = 0; j < limit - 1; j = j + 1){
+    for(int k = 1; k < limit; k = k + 1){
+      if(a[j] + a[k] == sum){
+        printf("%i %i", a[j], a[k]);
+      }
+      printf("s");
+    }
+    printf("a");
+  }
+  
   return 0;
 }
 
