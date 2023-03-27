@@ -10,8 +10,7 @@ peek()- returns top most element of stackass
 associtivity of exponent is right ot left
 operatio precedence: () >  '^' >  '*/'  > '+-'
 
-
-
+infix to Postfix:
 1]Print the operand as they arrive.
 2]If the stack is empty or contains a left parenthesis on top, push the incoming operator on to the stack.
 3]If the incoming symbol is '(', push it on to the stack.
@@ -21,3 +20,14 @@ operatio precedence: () >  '^' >  '*/'  > '+-'
 7]If the incoming operator has the same precedence with the top of the stack then use the associativity rules. 
     If the associativity is from left to right then pop and print the top of the stack then push the incoming operator. If the associativity is from right to left then push the incoming operator.
 8]At the end of the expression, pop and print all the operators of the stack
+
+infix to Prefix:
+1]Print the operand as they arrive right to left.
+2]If the stack is empty or contains a left parenthesis on top, push the incoming operator on to the stack.
+3]If the incoming symbol is '(', push it on to the stack.
+4]If the incoming symbol is ')', pop the stack and print the operators until the left parenthesis is found.
+5]If the incoming symbol has higher precedence than the top of the stack, push it on top of the stack.
+6]If the incoming symbol has lower precedence than the top of the stack, pop and print the top of the stack. Then test the incoming operator against the new top of the stack.
+7]If the incoming operator has the same precedence with the top of the stack then push directly
+8]At the end of the expression, pop and print all the operators of the stack
+9] Reverse the output
