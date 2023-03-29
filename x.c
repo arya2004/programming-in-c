@@ -2,14 +2,14 @@
 #include<conio.h>
 #include<stdlib.h>
 #include <math.h>
-
+#include "s.h"
 double Fact(double i) { //not unsigned long int, cause double stores more.useless after 15
     if(i <= 1) {
         return 1;
     }
     else{
         return i * Fact(i - 1);
-    }
+   }
 }
 
 
