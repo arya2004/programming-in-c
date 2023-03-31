@@ -31,3 +31,15 @@ infix to Prefix:
 7]If the incoming operator has the same precedence with the top of the stack then push directly
 8]At the end of the expression, pop and print all the operators of the stack
 9] Reverse the output
+
+
+Queue: 
+isFull()//rare == size-1
+ isEmppty() //fornt > rare or front == -1
+enqueue() //insert element
+dequeue()  //delete from front
+front()  //returns front element.-1 initialized  [front,,,,,,rare]
+rare() //returns rare eleent. -1 initialized
+size()  //returns no of elements. rare-front + 1
+display() // from front to rare printf
+
