@@ -292,6 +292,58 @@ int binary_s_rec(int x[], int middle, int number, int lower, int highest){
     
 }
 
+//circular queue finctions
+#define N 5
+int queue[N];
+int front=-1;
+int rare= -1;
+
+void enqueue(int x)
+{
+    if (r == size -1)
+    {
+        printf("size full");
+    }
+    else if (front == -1 && rare == -1)
+    {
+        front = 0;
+        rare = 0;
+    
+    }
+    else
+    {
+        r++;
+        queue[r] = x;
+    }
+    
+}
+
+void dequeue()
+{
+    if (front == -1 || front > rare)
+    {
+        printf("empty");
+    }
+    else
+    {
+        front = front + 1;
+    }
+}
+
+void display()
+{
+    for (int i = front; i <= rare; i++)
+    {
+        printf("%i ", queue[i]);
+    }
+    printf("\n");
+    
+}
+
+
+
+
+
 
 int  main() {
    //unsigned long int j = Fact(5);
