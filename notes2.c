@@ -43,3 +43,5 @@ rare() //returns rare eleent. -1 initialized
 size()  //returns no of elements. rare-front + 1
 display() // from front to rare printf
 
+double ended queue:
+    elements can be deleted from both front and rare;

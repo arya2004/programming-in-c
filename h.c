@@ -62,7 +62,7 @@ void enqueue(int x)
     {
         front = 0;
         rare = 0;
-    
+        queue[r] = x;    
     }
     else
     {
