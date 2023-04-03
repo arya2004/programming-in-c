@@ -60,7 +60,7 @@ void pop(){
 //     push(10);
 //     push(20);
 //     push(30);
-//     push(340);
+//     push(340);==
 //     push(22323);
 //     push(30213);
 //     push(10213);
