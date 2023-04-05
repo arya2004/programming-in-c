@@ -45,3 +45,14 @@ display() // from front to rare printf
 
 double ended queue:
     elements can be deleted from both front and rare;
+    circular array used to represent this
+    enqueue_front();
+    enqueue_rare();//normie
+    dequeue_front();//normie
+    dequeue_rare();
+    display();
+    fonrt();
+    rare();
+
+input restricted double neded queue: enqueue one, dequeue both
+output restricted double neded queue: dequeue one, enqueue both

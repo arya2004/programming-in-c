@@ -9,6 +9,7 @@
         "stdio.h": "c",
         "xlocale": "c",
         "ios": "c",
-        "xiosbase": "c"
+        "xiosbase": "c",
+        "math.h": "c"
     }
 }

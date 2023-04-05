@@ -54,7 +54,7 @@ int rare= -1;
 
 void enqueue(int x)
 {
-    if (r == size -1)
+    if (rare == N -1)
     {
         printf("size full");
     }
@@ -62,12 +62,12 @@ void enqueue(int x)
     {
         front = 0;
         rare = 0;
-        queue[r] = x;    
+        queue[rare] = x;    
     }
     else
     {
-        r++;
-        queue[r] = x;
+        rare++;
+        queue[rare] = x;
     }
     
 }
@@ -94,6 +94,13 @@ void display()
     
 }
 
+void deq()
+{
+    void a(int a){
+        printf("%i", a);
+    }
+    
+}
 
 int main(){
 int i = 0;
