@@ -103,7 +103,7 @@ void deq()
 }
 
 int main(){
-int i = 0;
+printf("%i", (-1 + 5) % 5);
 
 
   return 0;

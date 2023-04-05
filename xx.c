@@ -5,6 +5,7 @@
 #include<string.h>
 
 #define N 5
+#define size 5
 int queue[N];
 int front=-1;
 int rare= -1;
@@ -48,22 +49,22 @@ void enqueue_fornt(int x)
         rare = 0;
         queue[front] = x;
     }
-    else if (rare == size-1)
+    else if (front == 0)
     {
-        rare = 0;
-        queue[rare] = x;
+        front = size - 1;
+        queue[front] = x;
     }
     
 
     else
     {
-        rare = (rare+ 1)% N ;
-        queue[rare] = x;
+        front-- ;
+        queue[front] = x;
     }
     
 }
 
-void dequeue()
+void dequeue_front()
 {
     if (front == -1 || rare == -1)
     {
@@ -78,6 +79,33 @@ void dequeue()
     {
         front = (front + 1)% N;
     }
+}
+void dequeue_rare()
+{
+    if (front == -1 || rare == -1)
+    {
+        printf("empty");
+    }
+    else if (front == rare)
+    {
+        front = -1;
+        rare = -1;
+    }
+    else
+    {
+        rare = (rare + N - 1)% N;
+    }
+}
+
+void print()
+{
+    int i = front;
+    while (i != rare)
+    {
+        printf("%i", queue[i]);
+        i = (i + 1)% N;
+    }
+    
 }
 
 int main(){
