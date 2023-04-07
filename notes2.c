@@ -57,3 +57,14 @@ double ended queue:
 input restricted double neded queue: enqueue one, dequeue both
 output restricted double neded queue: dequeue one, enqueue both
 
+linked list:
+
+[data, link]
+end node contains null pointer
+
+insertion & deletion:       
+    
+types:
+simple  [data, ptr]
+doubly  [ptr prev address, data, ptr next address]
+circular  ptr of last element points at first element
