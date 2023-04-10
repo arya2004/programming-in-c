@@ -2,7 +2,8 @@
 #include<conio.h>
 #include<stdlib.h>
 #include <math.h>
-#include "s.h"
+#define MAX 10
+#include "stack.h"
 double Fact(double i) { //not unsigned long int, cause double stores more.useless after 15
     if(i <= 1) {
         return 1;
@@ -293,6 +294,7 @@ int binary_s_rec(int x[], int middle, int number, int lower, int highest){
 }
 
 //circular queue finctions
+#define size 5
 #define N 5
 int queue[N];
 int front=-1;
@@ -308,7 +310,7 @@ void enqueue(int x)
     {
         front = 0;
         rare = 0;
-        queue[r] = x;
+        queue[rare] = x;
     }
     
     else
@@ -368,13 +370,13 @@ int  main() {
     //aaary();
     //display_dig(12305);
     //kkkk();
-    int a[10] = {11,22,33,44,55,66,77,88,99,110};
-    int lowest = 0;
-    int highest = 9;
-    int middle = (highest - lowest) % 2;
-    int number = 44;
-    //printf("%i",binary_s_rec(a,middle, number, lowest, highest));
-    printf("%i",Summation_using_recursion(10));
+    // int a[10] = {11,22,33,44,55,66,77,88,99,110};
+    // int lowest = 0;
+    // int highest = 9;
+    // int middle = (highest - lowest) % 2;
+    // int number = 44;
+    // //printf("%i",binary_s_rec(a,middle, number, lowest, highest));
+    // printf("%i",Summation_using_recursion(10));
  
    return 0;
 }

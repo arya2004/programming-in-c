@@ -107,9 +107,8 @@ void print()
     }
     
 }
-
+//pass addres of members of structures and printn them
 int main(){
-int i = 0;
 
 
   return 0;

@@ -3,10 +3,13 @@
 #include <math.h>
 #include<string.h>
 
-#define MAX 8
-int stack[8];
+//#define MAX 8
+int stack[MAX];
 int top = -1;
-
+int qq = 0;
+void init(){
+    top = -1;
+}
 
 int isFull(){
     if (top == MAX -1)
@@ -56,21 +59,14 @@ void pop(){
     
 }
 
-// int main(){
-//     push(10);
-//     push(20);
-//     push(30);
-//     push(340);==
-//     push(22323);
-//     push(30213);
-//     push(10213);
-//     push(170234);
-//     push(30);
-//     printf("top %i\n", peek());
-//     pop();
-//     printf("top %i\n", peek());
+void display(){
+    for (int w = 0 ; w <= top; w = w+1)
+    {
+        printf("%i ", stack[w]);
+    }
+    printf("\n");
+}
 
-//   return 0;
-// }
+
 
 
