@@ -8,45 +8,45 @@
 #define size 5
 int queue[N];
 int front=-1;
-int rare= -1;
+int rear= -1;
 //double ended queur
 void enqueue_rare(int x)
 {
-    if ((rare == size -1 && front == 0 )|| rare == front - 1 )
+    if ((rear == size -1 && front == 0 )|| rear == front - 1 )
     {
         printf("size full");
     }
-    else if (front == -1 && rare == -1)
+    else if (front == -1 && rear == -1)
     {
         front = 0;
-        rare = 0;
-        queue[rare] = x;
+        rear = 0;
+        queue[rear] = x;
     }
-    else if (rare == size-1)
+    else if (rear == size-1)
     {
-        rare = 0;
-        queue[rare] = x;
+        rear = 0;
+        queue[rear] = x;
     }
     
 
     else
     {
-        rare = (rare+ 1)% N ;
-        queue[rare] = x;
+        rear = (rear+ 1)% N ;
+        queue[rear] = x;
     }
     
 }
 
 void enqueue_fornt(int x)
 {
-    if ((rare == size -1 && front == 0 )|| rare == front - 1 )
+    if ((rear == size -1 && front == 0 )|| rear == front - 1 )
     {
         printf("size full");
     }
-    else if (front == -1 && rare == -1)
+    else if (front == -1 && rear == -1)
     {
         front = 0;
-        rare = 0;
+        rear = 0;
         queue[front] = x;
     }
     else if (front == 0)
@@ -66,14 +66,14 @@ void enqueue_fornt(int x)
 
 void dequeue_front()
 {
-    if (front == -1 || rare == -1)
+    if (front == -1 || rear == -1)
     {
         printf("empty");
     }
-    else if (front == rare)
+    else if (front == rear)
     {
         front = -1;
-        rare = -1;
+        rear = -1;
     }
     else
     {
@@ -82,25 +82,25 @@ void dequeue_front()
 }
 void dequeue_rare()
 {
-    if (front == -1 || rare == -1)
+    if (front == -1 || rear == -1)
     {
         printf("empty");
     }
-    else if (front == rare)
+    else if (front == rear)
     {
         front = -1;
-        rare = -1;
+        rear = -1;
     }
     else
     {
-        rare = (rare + N - 1)% N;
+        rear = (rear + N - 1)% N;
     }
 }
 
 void print()
 {
     int i = front;
-    while (i != rare)
+    while (i != rear)
     {
         printf("%i", queue[i]);
         i = (i + 1)% N;
