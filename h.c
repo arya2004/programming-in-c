@@ -94,16 +94,14 @@ void display()
     
 }
 
-void deq()
+void peek()
 {
-    void a(int a){
-        printf("%i", a);
-    }
+    printf("%i", N[front]);
     
 }
 
 int main(){
-printf("%i", (-1 + 5) % 5);
+
 
 
   return 0;

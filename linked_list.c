@@ -2,15 +2,37 @@
 #include<stdlib.h>
 #include <math.h>
 #include<string.h>
-
+#include"linked_list.h"
 struct node
 {
     int data;
     struct node* link;
 };
+struct node* head = NULL;
+int length = 0;
+
+struct node* createNode(int x)
+{
+    head = (struct node*)malloc(sizeof(struct node));
+    head->data = x;
+    head->link = NULL;
+    length = length+1;
+    return head;
+}
+
+struct node* addNode(struct node* ,int x)
+{
+    struct node* newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->data = x;
+    newNode->link = NULL;
+    head->link = newNode;
+    
+}
+
+
 
 void Main(){
-    struct node* head = NULL;
+
     struct node*newNode;
     head = (struct node*)malloc(sizeof(struct node));
     head->data = 10;
@@ -25,10 +47,16 @@ void Main(){
 
 void display()
 {
+        struct node*temp;
+    temp = head;
+    while (temp->link != NULL)
+    {   printf("%i", temp->data);
+        temp = temp->link;
+    }
     
 }
 
-void main(){
+void men(){
     struct node* head = NULL;
     struct node*newNode;
     head = (struct node*)malloc(sizeof(struct node));
@@ -47,5 +75,11 @@ void main(){
     }
     temp->link = newNode;
     
+
+}
+void main(){
+    
+    IntLL *list = IntLL_create();
+    list = LL_Push(list,10);
 
 }
