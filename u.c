@@ -90,6 +90,10 @@ void q(void){
 int main(){
     //name_sorting();
     //matrix_mul();
-    q();
+    for (int i = 0; i < 100; i++)
+    {
+        printf("%i\n", 70 + (rand() % 10)- (rand() % 10));
+    }
+    
     return 0;
 }

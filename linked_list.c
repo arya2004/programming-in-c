@@ -77,6 +77,12 @@ void men(){
     
 
 }
+
+struct node* delete()
+{
+    
+}
+
 void main(){
     
     IntLL *list = IntLL_create();

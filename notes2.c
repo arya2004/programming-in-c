@@ -68,3 +68,6 @@ types:
 simple  [data, ptr]
 doubly  [ptr prev address, data, ptr next address]
 circular  ptr of last element points at first element
+//In C, not manditory to typecast void pointer
+//LL is stored in heap memory
+//HW 19-04-2023 

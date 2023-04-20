@@ -12,6 +12,7 @@
         "xiosbase": "c",
         "math.h": "c",
         "xstring": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "xmemory": "c"
     }
 }
