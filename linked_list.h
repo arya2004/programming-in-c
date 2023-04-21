@@ -1,309 +1,145 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
+#include <math.h>
+#include<string.h>
 
-typedef struct IntLLNode
-{
-  int value;
-  struct IntLLNode *next;
-} IntNode;
+struct node
+{ 
+    int data;
+    struct node* link;
+};
 
-typedef struct
+struct node * init(struct node* head,int x)
 {
-  int length;
-  IntNode *head;
-} IntLL;
-
-IntNode *IntNode_create(int val)
-{
-  IntNode *v = (IntNode *)malloc(sizeof(IntNode));
-  if (v == NULL) {
-   // LL_error(MEM_ALLOC_ERROR);
-    exit(1);
-  }
-  v->next = NULL;
-  v->value = val;
-  return v;
+    head = (struct node *)malloc(sizeof(struct node));
+    head->data = x; 
+    head->link = NULL;
+    return head;
 }
 
-void IntNode_destroy(IntNode *node)
-{
-  free(node);
-}
-
-IntLL *IntLL_create()
-{
-  IntLL *list = (IntLL*)malloc(sizeof(IntLL));
-  IntNode *head = IntNode_create(0);
-  list->head = head;
-  list->length = 0;
-  return list;
-}
-
-void IntLL_destroy(IntLL *list)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  IntNode *prev = NULL;
-  IntNode *current = list->head;
-  while (current->next != NULL)
-  {
-    prev = current;
-    current = current->next;
-    IntNode_destroy(prev);
-  }
-  IntNode_destroy(current);
-  free(list);
-  list->head = NULL;
-}
-
-int IntLL_is_empty(IntLL *list)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  return list->length == 0;
-}
-
-IntLL *IntLL_push(IntLL *list, int value)
-{
-  if (list->head == NULL) {
-   // LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  IntNode *new_node = IntNode_create(value);
-  if (IntLL_is_empty(list))
-  {
-    list->head = new_node;
-  }
-  else
-  {
-    IntNode *current = list->head;
-    while (current->next != NULL)
+struct node*count(struct node* head){
+    struct node* temp = head;
+    int count = 0;
+    while(temp != NULL)
     {
-      current = current->next;
+        count = count + 1;
+        temp = temp->link;
     }
-    current->next = new_node;
-  }
-  list->length++;
-  return list;
+    printf("\n%i", count);
+    return head;
 }
 
-IntLL *IntLL_unshift(IntLL *list, int value)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  IntNode *new_node = IntNode_create(value);
-  new_node->next = list->head;
-  list->head = new_node;
-  list->length++;
-  return list;
-}
-
-IntLL *IntLL_pop(IntLL *list)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  if (IntLL_is_empty(list)) {
-   // LL_error(LIST_EMPTY);
-    return list;
-  }
-  IntNode *current = list->head;
-  int length = list->length;
-  while (length - 2)
-  {
-    current = current->next;
-    length--;
-  }
-  IntNode_destroy(current->next);
-  current->next = NULL;
-  list->length--;
-  return list;
-}
-
-IntLL *IntLL_shift(IntLL *list)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  if (IntLL_is_empty(list)) {
-    //LL_error(LIST_EMPTY);
-    return list;
-  }
-  IntNode *new_node_head = list->head->next;
-  IntNode_destroy(list->head);
-  list->head = new_node_head;
-  return list;
-}
-
-void IntLL_print(IntLL *list)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  IntNode *current = list->head;
-  while (current != NULL)
-  {
-    printf("\n%d", current->value);
-    current = current->next;
-  }
-  printf("\n");
-}
-
-IntLL *IntLL_insert(IntLL *list, int value, int index)
-{
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  IntNode *new_node = IntNode_create(value);
-  if (IntLL_is_empty(list))
-  {
-    list->head = new_node;
-  }
-  if (index < 0 || index > list->length) {
-    //LL_error(OUT_OF_BOUNDS);
-    return list;
-  }
-  else
-  {
-    IntNode *current = list->head;
-    int length = list->length;
-    if (index > 0)
+struct node* print(struct node* head){
+    struct node* temp = head;
+   printf("\nHEAD");
+    while(temp != NULL)
     {
-
-      while (index - 1)
-      {
-        current = current->next;
-        index--;
-      }
-      IntNode *old = current->next;
-      new_node->next = old;
-      current->next = new_node;
+        printf("->%i", temp->data);
+        temp = temp->link;
     }
-    else
-    {
-      new_node->next = current;
-      list->head = new_node;
+   return head;
+}
+struct node*insert_end(struct node* head, int x)
+{   
+    struct node* temp = head;
+    while(temp->link!= NULL)
+    {  
+        temp = temp->link;
     }
-  }
-  list->length++;
-  return list;
+    temp->link = (struct node*)malloc(sizeof(struct node));
+    temp->link->data= x;
+    temp->link->link = NULL;
+    return head;
 }
 
-IntLL *IntLL_delete(IntLL *list, int index)
+struct node* insert_beginneing(struct node* head, int x)
+{   //we are passing the address of first node but we also need address of head
+    //alternatively pass &head and use double pointer
+    struct node* temp = (struct node*)malloc(sizeof(struct node));
+    temp->data = x;
+    temp->link = head;
+    head = temp;
+    return head;
+}
+
+struct node*insert_any(struct node* head, int pos, int data)
 {
-  if (list->head == NULL) {
-   // LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  if (IntLL_is_empty(list))
-  {
-   // LL_error(LIST_EMPTY);
-    return list;
-  }
-  if (index < 0 || index > list->length - 1) {
-   // LL_error(OUT_OF_BOUNDS);
-    return list;
-  }
-  else
-  {
-    IntNode *current = list->head;
-    if (index > 0)
+    struct node* temp = (struct node*)malloc(sizeof(struct node));
+    temp->data = data;
+    temp->link = NULL;
+    struct node* ptr = head;
+    for (int i = 1;i<pos-1 ; i++)
     {
+       ptr = ptr->link;
+    }//order imp, else access to 3rd element is lost
+    temp->link = ptr->link;
+    ptr->link = temp;
+return head;
 
-      while (index - 1)
-      {
-        current = current->next;
-        index--;
-      }
-
-      IntNode *to_delete = current->next;
-      current->next = to_delete->next;
-      IntNode_destroy(to_delete);
-    }
-    else
-    {
-      list->head = current->next;
-      IntNode_destroy(current);
-    }
-  }
-  list->length--;
-  return list;
 }
 
-IntLL *IntLL_reverse(IntLL *list)
+struct node* delete_first(struct node* head)
 {
-  if (list->head == NULL) {
-   // LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  IntNode *prev = NULL;
-  IntNode *current = list->head;
-
-  while (current->next != NULL)
-  {
-    IntNode *next_copy = current->next;
-    IntNode *current_copy = current;
-    current->next = prev;
-    current = next_copy;
-    prev = current_copy;
-  }
-  current->next = prev;
-  list->head = current;
-  return list;
+    struct node* temp = head;
+    head = head->link;
+    free(temp);
+    temp = NULL;//without this, temp still contains address of first location
+    return head;
 }
 
-int IntLL_get (IntLL *list, int index) {
-  if (list->head == NULL) {
-   // LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  if (IntLL_is_empty(list)) {
-   // LL_error(LIST_EMPTY);
-    return -1;
-  }
-  if (index < 0 || index > list->length - 1) {
-    //LL_error(OUT_OF_BOUNDS);
-    return -1;
-  }
+// void delete_last(struct node* head)
+// {   //if no node, list empty
+// //if head->link = NUNLL, no node, free head
+//     struct node* last = head;
+//     struct node* sec_last = head;
+//     while (last->link != NULL)
+//     {
+//         sec_last = last;
+//         last = last->link;
+//     }
+//     sec_last->link = NULL;
+//     free(last);
+//     last = NULL;
+// }
 
-  IntNode* current = list->head;
-
-  while (index) {
-    current = current->next;
-    index--;
-  }
-
-  return current->value;
+ struct node* delete_last(struct node* head)
+{   //if head = NULL, list empty
+//if head->link = NUNLL, no node, free head
+    
+    struct node* sec_last = head;
+    while (sec_last->link->link != NULL)
+    {
+        sec_last = sec_last->link;
+    }
+    free(sec_last->link);
+    sec_last->link = NULL;
+    return head;
 }
 
-IntLL *IntLL_set(IntLL *list, int value, int index) {
-  if (list->head == NULL) {
-    //LL_error(LIST_DESTROYED);
-    exit(1);
-  }
-  if (IntLL_is_empty(list)) return list;
-  if (index < 0 || index > list->length - 1) {
-    //LL_error(OUT_OF_BOUNDS);
-    return list;
-  }
+struct node*delete_any(struct node* head, int pos)
+{
+    struct node* current = head;
+    struct node* previous = head;
+    for (int i = 2; i < pos; i++)
+    {
+        previous = previous->link;
+    }
+    current = previous->link;
+    previous->link = current->link;
+    free(current);
+    return head;
+    
+}
 
-  IntNode* current = list->head;
-
-  while (index) {
-    current = current->next;
-    index--;
-  }
-
-  current->value = value;
-  return list;
+struct node* drop_list(struct node* head)
+{
+    struct node* temp = head;
+    while (temp != NULL)
+    {
+        temp = temp->link;
+        free(head);
+        head = temp;
+    }
+    return head;
+    
 }
