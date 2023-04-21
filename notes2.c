@@ -70,4 +70,7 @@ doubly  [ptr prev address, data, ptr next address]
 circular  ptr of last element points at first element
 //In C, not manditory to typecast void pointer
 //LL is stored in heap memory
+insert beginning:
+    temp->link = head;
+    head = ptr;
 //HW 19-04-2023 
