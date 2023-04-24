@@ -15,5 +15,7 @@ void main(){
    head = insert_end(head, 111);
    head = delete_first(head);
    print(head);
+   head = drop_list(head);
+   print(head);
     
 }
