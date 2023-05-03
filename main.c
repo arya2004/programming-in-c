@@ -8,10 +8,14 @@
 int main()
 {   
     struct node* front = init(front, 6);
-    front = insert_end(front,77 );
-    front = insert_end(front,34 );
-    front = insert_end(front,92 );
+    front = enqueue(front, 90);
+    front = enqueue(front, 34);
+    front = enqueue(front, 52);
+    front = enqueue(front, 12);
     front = print(front);
-    front = delete_first(front);
+        front = dequeue(front);
+    front = dequeue(front);
+    front = print(front);
+    front  = enqueue(front, 77);
     front = print(front);
 }

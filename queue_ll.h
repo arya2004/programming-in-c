@@ -40,7 +40,7 @@ struct node* print(struct node* head){
     printf("->REAR");
    return head;
 }
-struct node*insert_end(struct node* head, int x)
+struct node*enqueue(struct node* head, int x)
 {   
     struct node* temp = head;
     while(temp->link!= NULL)
@@ -55,7 +55,7 @@ struct node*insert_end(struct node* head, int x)
 
 
 
-struct node* delete_first(struct node* head)
+struct node* dequeue(struct node* head)
 {
     struct node* temp = head;
     head = head->link;
@@ -66,7 +66,7 @@ struct node* delete_first(struct node* head)
 
 
 
-struct node* drop_list(struct node* head)
+struct node* drop_queue(struct node* head)
 {
     struct node* temp = head;
     while (temp != NULL)

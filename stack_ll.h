@@ -41,7 +41,7 @@ struct node* print(struct node* head){
 }
 
 
-struct node* insert_beginneing(struct node* head, int x)
+struct node* push(struct node* head, int x)
 {   //we are passing the address of first node but we also need address of head
     //alternatively pass &head and use double pointer
     struct node* temp = (struct node*)malloc(sizeof(struct node));
@@ -52,7 +52,7 @@ struct node* insert_beginneing(struct node* head, int x)
 }
 
 
-struct node* delete_first(struct node* head)
+struct node* pop(struct node* head)
 {
     struct node* temp = head;
     head = head->link;
@@ -61,7 +61,7 @@ struct node* delete_first(struct node* head)
     return head;
 }
 
-struct node* drop_list(struct node* head)
+struct node* drop_stack(struct node* head)
 {
     struct node* temp = head;
     while (temp != NULL)
