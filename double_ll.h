@@ -112,7 +112,7 @@ void printLL(struct node * head)
 
 
 
-int main()
+int MAIN()
 {   
     struct node* head = init(head, 6);
      head = addNode(head, 8);
