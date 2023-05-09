@@ -74,3 +74,13 @@ insert beginning:
     temp->link = head;
     head = ptr;
 //HW 19-04-2023 
+
+linear search
+
+
+
+typedef struct{
+    int count;
+    int size;
+    int *elements;
+}stack;
