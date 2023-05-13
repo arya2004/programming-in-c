@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include <math.h>
 #define MAX 10
-#include "stack.h"
+//#include "stack.h"
 double Fact(double i) { //not unsigned long int, cause double stores more.useless after 15
     if(i <= 1) {
         return 1;
@@ -294,8 +294,8 @@ int binary_s_rec(int x[], int middle, int number, int lower, int highest){
 }
 
 //circular queue finctions
-#define size 5
-#define N 5
+#define size 4
+#define N 4
 int queue[N];
 int front=-1;
 int rare= -1;
@@ -339,7 +339,7 @@ void dequeue()
 }
 
 void display()
-{
+{   printf("\n");
     for (int i = front; i <= rare; i++)
     {
         printf("%i ", queue[i]);
@@ -348,7 +348,19 @@ void display()
     
 }
 
+void print()
+{
+    int i = front;
+    printf("\nFRONT->");
+    while (i != rare)
+    {
+        printf("%i->", queue[i]);
+        i = (i + 1)% N;
+    }
+    printf("%i->", queue[ (i + 1)% N]);
 
+    printf("REAR");
+}
 
 
 
@@ -378,6 +390,10 @@ int  main() {
     // //printf("%i",binary_s_rec(a,middle, number, lowest, highest));
     // printf("%i",Summation_using_recursion(10));
  
+    enqueue(44);
+    enqueue(34);
+    display();
+    print();
    return 0;
 }
 

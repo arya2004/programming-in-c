@@ -187,22 +187,25 @@ void auto_stat(void){
 }*/
 
 
-void display_dig(int n){
+int display_dig(int n){
     if (n > 0){
         display_dig(n/10);
-        printf("%i ", n % 10);
+        return(n%10);
+        
+        
     }
     
 }
 
 int main(){ 
-    printf("\n%i",toh(3, 'A', 'C', 'B'));
+   // printf("\n%i",toh(3, 'A', 'C', 'B'));
     
     //print_num_word(7654635);
     //printf("Name:");
     //scanf("%s",name1);s
     //auto_stat();
-    //printf("%i", display_dig(343));
+    //display_dig(345);
+   printf("%i", display_dig(345));
     //printf("%d",ddm(2022,9,3));
 
     return 0;

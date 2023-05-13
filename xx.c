@@ -4,8 +4,8 @@
 #include <math.h>
 #include<string.h>
 
-#define N 5
-#define size 5
+#define N 4
+#define size 4
 int queue[N];
 int front=-1;
 int rear= -1;
@@ -100,16 +100,29 @@ void dequeue_rare()
 void print()
 {
     int i = front;
+    printf("\nFRONT->");
     while (i != rear)
     {
-        printf("%i", queue[i]);
+        printf("%i->", queue[i]);
         i = (i + 1)% N;
     }
-    
+    printf("%i->", queue[ (i + 1)% N]);
+
+    printf("REAR");
 }
 //pass addres of members of structures and printn them
 int main(){
+    enqueue_rare(36);
+    enqueue_rare(38);
+    enqueue_rare(40);
+    enqueue_rare(37);
+    
+    print();
+    
+    dequeue_front();
+    enqueue_rare(41);
 
+    print();
 
   return 0;
 }
