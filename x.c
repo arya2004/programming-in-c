@@ -390,10 +390,7 @@ int  main() {
     // //printf("%i",binary_s_rec(a,middle, number, lowest, highest));
     // printf("%i",Summation_using_recursion(10));
  
-    enqueue(44);
-    enqueue(34);
-    display();
-    print();
+print("%i", INT_MAX);
    return 0;
 }
 

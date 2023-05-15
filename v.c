@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include <math.h>
 #include<string.h>
+#include <limits.h>
 int noos = 0;
 
 void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod){
@@ -197,6 +198,42 @@ int display_dig(int n){
     
 }
 
+float rr(int a)
+{
+    if (a == 0)
+    {
+        return 0;
+    }
+    else if (a == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return (-2 *rr(a - 1)) - rr(a - 2) + (2*a) + 6;
+    }
+    
+    
+}
+
+
+
+
+
+void rotate(int* nums, int numsSize, int k){
+    for (int i = 0; i < k; i++)
+    {   int j = nums[numsSize -1];
+        nums--;
+        realloc(nums, sizeof(int) * numsSize);
+        nums[0] = j;
+    }
+        for (int ii = 0; ii < 5; ii++)
+    {
+        printf("\n%i", nums[ii]);
+    }
+        
+}
+
 int main(){ 
    // printf("\n%i",toh(3, 'A', 'C', 'B'));
     
@@ -205,8 +242,15 @@ int main(){
     //scanf("%s",name1);s
     //auto_stat();
     //display_dig(345);
-   printf("%i", display_dig(345));
+   //printf("%f", rr(3));
+  //printf("%f", TT(4));
+  //rotate();
     //printf("%d",ddm(2022,9,3));
+    int *p = malloc(sizeof(int)* 5);
+    int a[5] = {2,3,4,5,6};
+    p = a;
+    rotate(p, 5,3);
 
+    
     return 0;
 }

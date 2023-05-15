@@ -99,9 +99,10 @@ let submission = () =>{
     throw(thing)
 }
 
-try{
-    submission();
-}catch(thing){
-    console.log(thing);
-}
+// try{
+//     submission();
+// }catch(thing){
+//     console.log(thing);
+// }
 
+console.log(console.log("Hello"))
