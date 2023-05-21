@@ -284,11 +284,11 @@ int binary_s_rec(int x[], int middle, int number, int lower, int highest){
     }
     else if (x[middle] < number)
     {
-        binary_s_rec(x,(middle - lower) % 2, number, lower, middle);
+        binary_s_rec(x,(middle + lower) / 2, number, lower, middle);
     }
     else if (x[middle] > number)
     {
-         binary_s_rec(x,(highest - middle) % 2, number, middle, highest);
+         binary_s_rec(x,(highest + middle) / 2, number, middle, highest);
     }
     
 }

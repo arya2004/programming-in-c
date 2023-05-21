@@ -200,17 +200,13 @@ int display_dig(int n){
 
 float rr(int a)
 {
-    if (a == 0)
+    if (a == 1)
     {
-        return 0;
-    }
-    else if (a == 1)
-    {
-        return 1;
+        return 4;
     }
     else
     {
-        return (-2 *rr(a - 1)) - rr(a - 2) + (2*a) + 6;
+        return (5*a) + rr(a-1);
     }
     
     
@@ -242,14 +238,11 @@ int main(){
     //scanf("%s",name1);s
     //auto_stat();
     //display_dig(345);
-   //printf("%f", rr(3));
+   printf("%f", rr(64));
   //printf("%f", TT(4));
   //rotate();
     //printf("%d",ddm(2022,9,3));
-    int *p = malloc(sizeof(int)* 5);
-    int a[5] = {2,3,4,5,6};
-    p = a;
-    rotate(p, 5,3);
+    
 
     
     return 0;
