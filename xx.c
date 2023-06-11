@@ -111,18 +111,19 @@ void print()
     printf("REAR");
 }
 //pass addres of members of structures and printn them
+
+
+int funcp(){
+static int x = 1;
+x++;
+return x;
+}
 int main(){
-    enqueue_rare(36);
-    enqueue_rare(38);
-    enqueue_rare(40);
-    enqueue_rare(37);
-    
-    print();
-    
-    dequeue_front();
-    enqueue_rare(41);
-
-    print();
-
-  return 0;
+int x,y;
+x = funcp();
+y = funcp()+x;
+printf("%d\n", (x+y));
+printf("%d\n", x);
+printf("%d\n", y);
+return 0;
 }

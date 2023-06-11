@@ -4,3 +4,7 @@ a.exe
 uuu.c
 uu.c
 t.c
+.vs
+.vscode
+bin
+obj

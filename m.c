@@ -96,6 +96,10 @@ void calendar_printer(int year, int month){
 int main(){
     int year = 2022;
     int month = 12;
-    calendar_printer(year,month);
+   // calendar_printer(year,month);
+   printf("\033[0;31m"); //Set the text to the color red
+printf("Hello\n"); //Display Hello in red
+printf("\033[0m sdgh "); //Resets the text to default color
+printf(" --");
     return 0;
 }
