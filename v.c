@@ -230,6 +230,67 @@ void rotate(int* nums, int numsSize, int k){
         
 }
 
+void fibf(int num)
+{
+    for (int i = 0; i < num; i++)
+    {
+        for (int j = num-i-1; j >= 0 ; j--)
+        {
+           printf(" ");
+        }
+        for (int k = 0; k < (2*i) +1 ; k++)
+        {
+           if( k%2 == 0)
+           {
+                printf("%c", i+65);
+           }
+           if( k%2 == 1)
+           {
+                printf(" ");
+           }
+           
+        }
+        printf("\n");
+        
+        
+    }
+    
+}
+
+void parallegram(int length, int height)
+{
+    for (int i = 1; i < height; i++)
+    {
+        for (int k = 0; k < height -i; k++)
+        {
+            printf("_");
+        }
+        if(i == 0 || i== height -1 )
+        {
+            for (int j = 0; i < length; j++)
+            {
+                printf("%i",j);
+            }
+            
+        }
+        if(!(i == 0 || i== height -1) )
+        {
+            printf("*");
+            for (int ii = 0; ii < length -2; ii++)
+            {
+                printf("_");
+            }
+            
+
+            printf("*");
+        }
+        printf("\n");
+        
+    }
+    
+}
+
+
 int main(){ 
    // printf("\n%i",toh(3, 'A', 'C', 'B'));
     
@@ -238,12 +299,12 @@ int main(){
     //scanf("%s",name1);s
     //auto_stat();
     //display_dig(345);
-   printf("%f", rr(64));
+  // printf("%f", rr(64));
   //printf("%f", TT(4));
   //rotate();
     //printf("%d",ddm(2022,9,3));
-    
-
-    
+   // fibf(10);
+//printf("%i", 'A');
+     parallegram(4,9);
     return 0;
 }
