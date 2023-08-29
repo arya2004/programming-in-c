@@ -3,7 +3,7 @@
 #include <math.h>
 #include<string.h>
 
-//#define MAX 8
+#define MAX 8
 int stack[MAX];
 int top = -1;
 int qq = 0;
