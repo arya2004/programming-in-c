@@ -25,7 +25,7 @@ void ary(void){
     
 }
 int main(){
-ary();
+
     /*char c[] = "Hello";
 for (int i = 0; i < 5; i++)
 {

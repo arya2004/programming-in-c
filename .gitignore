@@ -8,3 +8,6 @@ t.c
 .vscode
 bin
 obj
+13.c
+tbt.c
+node_modules
