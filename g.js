@@ -105,4 +105,6 @@ let submission = () =>{
 //     console.log(thing);
 // }
 
-console.log(console.log("Hello"))
+//console.log(console.log("Hello"))
+
+console.log(('b' + 'a' + + 'a' + 'a').toLowerCase())
