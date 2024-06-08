@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# File Name: bashScriptExamples.sh
+# Description: Demonstrates basic Bash scripting concepts.
+
 # Basic Arithmetic operations
 a=10
 b=5
