@@ -1,59 +1,70 @@
-# C Code Repository
 
-Welcome to the  C Code Repository! This repository is an open-source collection of various C programs. It serves as a code bank, providing a diverse range of C code snippets, algorithms, and implementations. Whether you are a beginner learning C or an experienced programmer seeking inspiration, you will find a variety of examples here.
+# First Year C Codes Repository
+
+Welcome to the First Year C Codes repository! This repository contains a collection of C programs and projects that I worked on during my first year of programming.
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Usage](#usage)
-3. [Contributing](#contributing)
-4. [License](#license)
+- [About](#about)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Introduction
+## About
 
-This repository aims to provide a broad collection of C programs covering a wide range of topics, concepts, and programming challenges. The code files are organized randomly, without specific categories or themes, making it an ideal resource for exploring different aspects of C programming.
+In this repository, you will find various C programs covering fundamental programming concepts such as data types, control structures, functions, arrays, pointers, and more. These programs are organized into directories based on their topics for easy navigation and understanding.
 
-## Usage
+## Getting Started
 
-To make the most of this repository, follow these steps:
+To get started with using the codes in this repository, follow these steps:
 
-1. Clone the repository to your local machine using the following command:
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/arya2004/programming-in-c.git
    ```
-   git clone https://github.com/arya2004/Programming_in_C.git
+
+2. Navigate to the directory of the specific program you want to explore:
+   ```bash
+   cd programming-in-c/program-name
    ```
 
-2. Browse through the repository to explore the various C code files available.
+3. Compile the C code using a C compiler (e.g., GCC):
+   ```bash
+   gcc program-name.c -o program-name
+   ```
 
-3. Open the desired code file in your preferred C programming IDE or editor.
+4. Run the compiled program:
+   ```bash
+   ./program-name
+   ```
 
-4. Read and understand the code, including any comments provided to explain the logic and functionality.
-
-5. Compile and run the program to observe its behavior and output.
-
-6. Feel free to modify the code, experiment with different inputs, and explore alternative implementations to enhance your learning and problem-solving skills.
 
 ## Contributing
 
-Contributions to this repository are encouraged and appreciated! If you have a C program you would like to share or if you find an issue with an existing code file, follow these steps:
+If you'd like to contribute to this repository, please follow these guidelines:
 
 1. Fork the repository to your GitHub account.
+2. Create a new branch for your changes:
+   ```bash
+   git checkout -b feature-branch
+   ```
 
-2. Create a new branch with a descriptive name for your contribution.
+3. Make your changes and commit them:
+   ```bash
+   git commit -am 'Add new feature'
+   ```
 
-3. Add or modify the code file(s) with your changes or additions.
+4. Push your changes to your fork:
+   ```bash
+   git push origin feature-branch
+   ```
 
-4. Ensure that your code is well-documented, adheres to best practices, and follows a consistent coding style.
-
-5. Test your code thoroughly to ensure its correctness and performance.
-
-6. Commit your changes and create a pull request, providing a clear explanation of your contribution and its purpose.
-
-The repository maintainers will review your pull request, provide feedback if needed, and merge it into the main branch once approved.
+5. Create a Pull Request (PR) from your fork's branch to the main repository's branch.
 
 ## License
 
-The code in this repository is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code for personal and commercial purposes. However, please refer to the [LICENSE](LICENSE) file for the complete details and terms of the license.
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
 
-If you use any code from this repository, attribution is appreciated but not required.
+---
 
-Happy coding and exploring the random C code collection!
+Happy coding!
