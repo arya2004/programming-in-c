@@ -4,9 +4,21 @@
 
 using namespace std;
 
+/**
+ * @brief Implements the Safety Algorithm to detect deadlock.
+ * 
+ * @param AllocatedResources Matrix representing resources allocated to processes.
+ * @param MaxResource Matrix representing maximum resources required by processes.
+ * @param NeedResources Matrix representing needed resources by processes.
+ * @param AvailableResources Vector representing available resources.
+ * @param Finished Vector representing finished processes.
+ * @param SafeSequence Vector to store the safe sequence of processes.
+ * @param noOfProcesses Number of processes.
+ * @param noOfResources Number of resources.
+ * @return true if system is in a safe state, false if in deadlock.
+ */
 bool SafetyAlgorithm(vector<vector<int>> AllocatedResources, vector<vector<int>> MaxResource, vector<vector<int>> NeedResources, vector<int> AvailableResources, vector<bool> &Finished, vector<int> &SafeSequence, const int noOfProcesses, const int noOfResources)
 {
-
     int safeSequenceCounter = 0;
 
     for (int i = 0; i < noOfProcesses; i++)
@@ -39,20 +51,26 @@ bool SafetyAlgorithm(vector<vector<int>> AllocatedResources, vector<vector<int>>
         }
     }
 
-    // for(int i=0; i<noOfProcesses; i++){
-    //     if(!Finished[i]) cout<<i<<" NF\n";
-    //     else cout<<i<<" F\n";
-    // }
-
     for (int i = 0; i < noOfProcesses; i++)
         if (SafeSequence[i] == -1)
             return false;
     return true;
 }
 
+/**
+ * @brief Removes processes in deadlock and checks if system is still in deadlock.
+ * 
+ * @param AllocatedResources Matrix representing resources allocated to processes.
+ * @param MaxResource Matrix representing maximum resources required by processes.
+ * @param AvailableResources Vector representing available resources.
+ * @param Finished Vector representing finished processes.
+ * @param SafeSequence Vector to store the safe sequence of processes.
+ * @param noOfProcesses Number of processes.
+ * @param noOfResources Number of resources.
+ * @param InDeadlock Vector of process IDs in deadlock.
+ */
 void RemoveAndCheckDeadlock(vector<vector<int>> AllocatedResources, vector<vector<int>> MaxResource, vector<int> AvailableResources, vector<bool> &Finished, vector<int> &SafeSequence, const int noOfProcesses, const int noOfResources, vector<int> InDeadlock)
 {
-
     cout << "Processes in Deadlock : ";
     for (auto i : InDeadlock)
     {
@@ -70,11 +88,6 @@ void RemoveAndCheckDeadlock(vector<vector<int>> AllocatedResources, vector<vecto
             MaxResource[PID][j] = 0;
         }
 
-        cout << "\nAvailable ";
-        for (auto i : AvailableResources)
-            cout << i << " ";
-        cout << endl;
-
         vector<vector<int>> NeedResources(noOfProcesses, vector<int>(noOfResources));
         for (int k = 0; k < noOfProcesses; k++)
             for (int j = 0; j < noOfResources; j++)
@@ -83,7 +96,7 @@ void RemoveAndCheckDeadlock(vector<vector<int>> AllocatedResources, vector<vecto
         vector<bool> Finished(noOfProcesses, false);
 
         bool notInDeadlock = SafetyAlgorithm(AllocatedResources, MaxResource, NeedResources, AvailableResources, Finished, SafeSequence, noOfProcesses, noOfResources);
-        cout<<"IN DEADLOCK "<<notInDeadlock<<endl;
+        
         if (notInDeadlock)
         {
             cout << "Deadlock Recovery: Remove Process IDs : ";
@@ -106,11 +119,8 @@ void RemoveAndCheckDeadlock(vector<vector<int>> AllocatedResources, vector<vecto
 
 int main()
 {
-    //freopen("input2.txt", "r", stdin);
-
-    int noOfProcesses = 5, noOfResources = 3;
-
-        cout << "\nNo of Proc and Resources:  ";
+    int noOfProcesses, noOfResources;
+    cout << "\nNo of Processes and Resources: ";
     cin >> noOfProcesses >> noOfResources;
 
     vector<vector<int>> AllocatedResources(noOfProcesses, vector<int>(noOfResources));
@@ -118,32 +128,29 @@ int main()
     vector<int> AvailableResources(noOfResources);
     vector<vector<int>> NeedResources(noOfProcesses, vector<int>(noOfResources));
 
-  
-
-    for (int i = 0; i < noOfProcesses; i++){
-         cout << "\nAllocated Resources to " << i  << ": " ; 
-         for (int j = 0; j < noOfResources; j++){
-           
-             cin >> AllocatedResources[i][j];
+    for (int i = 0; i < noOfProcesses; i++)
+    {
+        cout << "\nAllocated Resources to " << i << ": ";
+        for (int j = 0; j < noOfResources; j++)
+        {
+            cin >> AllocatedResources[i][j];
         }
     }
-        
-           
 
-    for (int i = 0; i < noOfProcesses; i++){
-             cout << "\nMax Resources to " << i  << ": " ; 
-        for (int j = 0; j < noOfResources; j++){
+    for (int i = 0; i < noOfProcesses; i++)
+    {
+        cout << "\nMax Resources to " << i << ": ";
+        for (int j = 0; j < noOfResources; j++)
+        {
             cin >> MaxResource[i][j];
         }
     }
-        
-            
-    cout << "\nAvailable resource: ";
-    for (int i = 0; i < noOfResources; i++){
-        
+
+    cout << "\nAvailable Resource: ";
+    for (int i = 0; i < noOfResources; i++)
+    {
         cin >> AvailableResources[i];
     }
-        
 
     for (int i = 0; i < noOfProcesses; i++)
         for (int j = 0; j < noOfResources; j++)
@@ -158,8 +165,7 @@ int main()
 
     if (isSafe)
     {
-        cout << "\nIt is not in Deadlock\n"
-             << endl;
+        cout << "\nSystem is not in Deadlock.\n" << endl;
         return 0;
     }
 
@@ -184,5 +190,3 @@ int main()
     RemoveAndCheckDeadlock(AllocatedResources, MaxResource, AvailableResources, Finished, SafeSequence, noOfProcesses, noOfResources, InDeadlock);
     return 0;
 }
-
-
